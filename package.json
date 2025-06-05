@@ -1,0 +1,41 @@
+{
+  "name": "composer-modal",
+  "displayName": "Composer Modal",
+  "description": "Opens Cursor chat in a new window with a single command",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["cursor", "chat", "modal", "window", "productivity"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "composer-modal.openChatInNewWindow",
+        "title": "Open Cursor Chat in New Window"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "composer-modal.openChatInNewWindow",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.74.0",
+    "@vscode/test-electron": "^2.3.8",
+    "typescript": "^5.3.3"
+  }
+} 
